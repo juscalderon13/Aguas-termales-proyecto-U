@@ -1,5 +1,5 @@
 #Variables
-nombre = input("Ingresa tu nombre para la factura: ")
+nombre = input("Ingresa el nombre del cliente para la factura: ")
 cafe = 1500
 llavero = 1000
 gorra = 5000

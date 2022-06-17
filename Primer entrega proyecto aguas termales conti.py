@@ -1,4 +1,13 @@
-# ESTA ES UNA PRUEBA
+# Proyecto Aguas termales
+# Profesor: Berrocal Brenes Gonzalo Alberto
+# Asignatura: Programacion Basica SC-115 / Grupo No. 5
+#Equipo: Conti Fidelitas
+# Programado por:
+# Salas Solis Marco
+# Calderon Najera Justin Andres
+# Fernandez Delgado Michael Andrey
+# Fajardo Cascante Saiden
+
 #Bienvenida
 print("-"*80)
 print('')
@@ -45,12 +54,12 @@ elif user == nomUser and contra == contraUser :
     print('')
     
 #menu principal
-    print("""Bienvenido al menu principal digite el numero de una de las siguientes opciones:
+    print("""Bienvenido al menu principal ingrese el numero de una de las siguientes opciones:
 
-1 - Registro de Visitantes y Agendas de visita
-2 - Venta de productos
-3 - Historial
-4 - Salir
+[1] - Registro de Visitantes y Agendas de visita
+[2] - Venta de productos
+[3] - Historial
+[4] - Salir
 """)
     
 #variable modulo para seleccionar los modulos del menu
@@ -66,8 +75,8 @@ elif user == nomUser and contra == contraUser :
         print('')
         print("""Ingrese el numero del modulo al que desea ir:
 
-1 - Registro de visitantes
-2 - Agenda de visitas
+[1] - Registro de visitantes
+[2] - Agenda de visitas
 """)
         print('Desea ir al:')
         
@@ -115,9 +124,9 @@ Correo:          {correo}""")
             print("")
             print('''Digite el numero al que desea ir:
 
-1 - Realizar un nuevo registro.
-2 - Volver al menu de registros y agendas.
-3 - Volver al menu principal.\n''')
+[1] - Realizar un nuevo registro.
+[2] - Volver al menu de registros y agendas.
+[3] - Volver al menu principal.\n''')
             print('Desea ir al:')
             subModRegistro = int(input())
             if subModRegistro == 1:
@@ -142,9 +151,9 @@ Correo:          {correo}""")
             Nombre= input('Ingrese el nombre del cliente: ')
             turno=int(input("""seleccione:
 
-1 - para el turno de la mañana.
-2 - para el turno de la tarde.
-3 - para el turno de la noche.
+[1] - para el turno de la mañana.
+[2] - para el turno de la tarde.
+[3] - para el turno de la noche.
 
 Desea ir al:
 """))
@@ -158,15 +167,15 @@ Desea ir al:
                 print("turno de la noche")
             else:
                 print("no aplica")
-            reservador=input("Dijite el nombre de la persona encargada de la reserva:")
+            reservador=input("Ingrese el nombre de la persona encargada de la reserva:")
             print("El encargado de la reserva es:",reservador)
             import random
             print("Su numero de reservación es:",random.randint(100, 10000))
 
-            print('''Digite el numero al que desea ir:
+            print('''Ingrese el numero al que desea ir:
 
-1 - Volver al menu de registros y agendas.
-2 - Volver al menu principal.\n''')
+[1] - Volver al menu de registros y agendas.
+[2] - Volver al menu principal.\n''')
             print('Desea ir al:')
             subModAgenda = int(input())
             if subModAgenda == 1:
@@ -198,9 +207,9 @@ Desea ir al:
         print("\nElige el producto que deseas comprar")
         print("""
 [1] = Café nacional
-[2] = Llaveros típicos
-[3] = Gorras con mensaje nacional
-[4] = Chocolates de café nacional""")
+[2] = Llavero típico
+[3] = Gorra con mensaje nacional
+[4] = Chocolate de café nacional""")
 
         #Operaciones.
 
@@ -212,7 +221,7 @@ Desea ir al:
             cantidad = int(input("Cantidad de paquetes: "))
             total = print("\nEl total sería: ", cantidad * cafe, "colones")
         elif eleccion == "2":
-            print("Has seleccionado Llaveros típicos")
+            print("Has seleccionado Llavero típico")
             cantidad = int(input("Cantidad de llaveros: "))
             total2 = print("\nEl total sería: ", cantidad * llavero, "colones")
         elif eleccion == "3":
@@ -230,13 +239,25 @@ Desea ir al:
         print("\nFactura a nombre de: ", nombre)
         print("Los productos que lleva son: ")
         print("El precio total es: ")
-        print("El IVA correspondiente es del 13 %")
+        print("El IVA correspondiente es del 13%")
         print("El precio de los productos con el IVA es de: ")
         print("El descuento a aplicar es de: ", descuento, "%")
         print("El precio total con el descuento es: ")
         print("El precio final de los productos seria: ")
+        print('')
+        print('''Ingrese el numero al que desea ir:
 
-
+[1] - Realizar otra venta.
+[2] - Volver al menu principal. \n''')
+        print('Desea ir al:')
+        subModVentas = int(input())
+        if subModVentas == 1:
+            print("Realizara otra venta")
+        elif subModVentas == 2:
+            print('Volvera al menu principal')
+        else:
+            print('Valor invalido intente de nuevo')
+            
     #caso de entrada al modulo de historial
     elif modulo == 3 :
         print("")
@@ -244,11 +265,11 @@ Desea ir al:
         print("-"*35, "HISTORIAL", "-"*34)
         print("-"*80)
         print('')
-        print("""Digite el numero del modulo al que desea ir:
+        print("""Ingrese el numero del modulo al que desea ir:
 
-1 - Listado de aforo por día según el tipo de persona que ingreso.
-2 - citas programadas de acuerdo a los clientes registrados.
-3 - Listado de productos, segun articulos facturados.
+[1] - Listado de aforo por día según el tipo de persona que ingreso.
+[2] - citas programadas de acuerdo a los clientes registrados.
+[3] - Listado de productos, segun articulos facturados.
 """)
         #variable submodulo Historial para seleccionar opciones en modulo historial
         print("Desea ir al: ")
@@ -287,8 +308,8 @@ Desea ir al:
                 print('')
                 print('''Digite el numero al que desea ir:
 
-1 - Volver al menu de Historial.
-2 - Volver al menu principal. \n''')
+[1] - Volver al menu de Historial.
+[2] - Volver al menu principal. \n''')
                 print('Desea ir al:')
                 subModAforo = int(input())
                 if subModAforo == 1:
@@ -316,8 +337,8 @@ Desea ir al:
                 print('')
                 print('''Digite el numero al que desea ir:
 
-1 - Volver al menu de Historial.
-2 - Volver al menu principal. \n''')
+[1] - Volver al menu de Historial.
+[2] - Volver al menu principal. \n''')
                 print('Desea ir al:')
                 subModCitas = int(input())
                 if subModCitas == 1:
@@ -340,8 +361,8 @@ Desea ir al:
             print('')
             print('''Digite el numero al que desea ir:
 
-1 - Volver al menu de Historial.
-2 - Volver al menu principal. \n''')
+[1] - Volver al menu de Historial.
+[2] - Volver al menu principal. \n''')
             print('Desea ir al:')
             subModLista = int(input())
             if subModLista == 1:
@@ -363,8 +384,8 @@ Desea ir al:
         print('')
         print('Esta saliendo de la aplicacion digite: ')
         print("""
-1 - Para salir de la aplicacion y cerrar sesion. 
-2 - Cancelar y volver al menu principal
+[1] - Para salir de la aplicacion y cerrar sesion. 
+[2] - Cancelar y volver al menu principal
 """)
         #variable submodulo salida para seleccionar opciones en modulo salida
         print('Desea cerrar sesion? :')
