@@ -1,18 +1,17 @@
 #registro de visitantes
 
-print("Bienvenido Dijite sus datos personales")
-nombre=input("Nombre:")
-apellido=input("Apellido:")
-apellido2=input("2do apellido:")
-cedula=int(input("Dijite su numero de cedula:"))
-celular=int(input("Dijite su numero telefonico:"))
-correo=input("Dijite su correo electronico:")
-Direccion=input("dijite su direccion de domicilio:")
-pais=int(input("Dijite 1 si es nacional o 2 si es extrangero:"))
+print("Bienvenido Ingrese sus datos personales")
+nombre=input("Nombre: ")
+apellidos=input("Apellidos: ")
+cedula=int(input("Digite su numero de cedula o pasaporte: "))
+celular=int(input("Digite su numero telefonico: "))
+correo=input("Digite su correo electronico: ")
+Direccion=input("digite su direccion de domicilio: ")
+pais=int(input("Digite 1 si es nacional o 2 si es extranjero: "))
 if pais==1:
     print("Nacional")
 elif pais==2:
-    print("Extrangero")
+    print("Extranjero")
 else:
       print("no aplica")
 edad=int(input("Dijite su edad:"))
