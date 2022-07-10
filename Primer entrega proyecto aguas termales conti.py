@@ -1,7 +1,7 @@
 # Proyecto Aguas termales
 # Profesor: Berrocal Brenes Gonzalo Alberto
 # Asignatura: Programacion Basica SC-115 / Grupo No. 5
-#Equipo: Conti Fidelitas
+# Equipo: Conti Fidelitas
 # Programado por:
 # Salas Solis Marco
 # Calderon Najera Justin Andres
