@@ -159,7 +159,7 @@ def SubmodRegisVisit():
         print("categoria invalida")
         
     #Solicitud del numero telefonico
-    celular = int(input("Numero telefonico: "))
+    celular = (input("Numero telefonico: "))
     while celular == "": #mientras este vacio solicitar otra vez
         print("**Este dato es obligatorio, intente otra vez!**")
         celular = input("Numero telefonico: ")
@@ -220,7 +220,7 @@ porfavor seleccione una de las siguientes opciones: """)
     subModRegistro = int(seleccion)
     return subModRegistro
 
-def SubModulAgenVisit(): #MEN IN WORKING FOR YOU
+def SubModulAgenVisit(): 
     print("")
     print("-"*80)
     print("-"*30, "AGENDA DE VISITAS", "-"*31)
@@ -228,14 +228,18 @@ def SubModulAgenVisit(): #MEN IN WORKING FOR YOU
     print('')
     while True:
         try:
-            fecha = input("Ingresa una fecha en el formato DD-MM-YYYY: ")
+            fecha = input("Ingrese la fecha en la que desea reservar (DD/MM/AAAA): \n")
             datetime.strptime(fecha, '%d/%m/%Y')
             break
         except ValueError:
             print("**Fecha inválida, intentelo de nuevo!**")
     print("la fecha de reservacion es:",fecha)
-    Nombre = input('Ingrese el nombre del cliente: \n')
-    turno = int(input("""seleccione:
+    nombre = input('Ingrese el nombre del cliente: \n')
+    while nombre == "": #mientras este vacio solicitar otra vez
+        print("**Este dato es obligatorio, intente otra vez!**")
+        nombre = input('Ingrese el nombre del cliente: \n')
+        
+    seleccionTurn = (input("""seleccione:
 
 [1] - para el turno de la mañana.
 [2] - para el turno de la tarde.
@@ -243,8 +247,8 @@ def SubModulAgenVisit(): #MEN IN WORKING FOR YOU
 
 Desea ir al:
 """))
-    turnos = [1,2,3]
-    while not turno in turnos:
+    turnos = ["1","2","3"]
+    while not seleccionTurn in turnos:
         print("""
                  VALOR INVALIDO!
 porfavor seleccione una de las siguientes opciones: """)
@@ -254,8 +258,8 @@ porfavor seleccione una de las siguientes opciones: """)
 [3] - para el turno de la noche.
 """)
         print('Desea ir al:')
-        turno = int(input())
-        
+        seleccionTurn = (input())
+    turno = int(seleccionTurn)
     print("")
     print("Usted selecciono: ")
     if turno == 1:
@@ -275,8 +279,8 @@ porfavor seleccione una de las siguientes opciones: """)
 [1] - Realizar otra reservacion.
 [2] - Volver al menu de Registros y Agendas.\n''')
     print('Desea ir al:')
-    subModAgenda = int(input())
-    valores = [1,2]
+    subModAgenda = (input())
+    valores = ["1","2"]
     while not subModAgenda in valores:
          print("""
                  VALOR INVALIDO!
@@ -286,7 +290,8 @@ porfavor seleccione una de las siguientes opciones: """)
 [2] - Volver al menu principal.
 """)
          print('Desea ir al:')
-         subModAgenda = int(input())
+         subModAgenda = (input())
+    subModAgenda = int(subModAgenda)
     return subModAgenda
 
 def ModuloVentas():
@@ -296,6 +301,8 @@ def ModuloVentas():
     print("-"*80)
     print('')
     nombre = input("Ingresa el nombre del cliente para la factura: ")
+    if nombre == "":
+        nombre = "Estimado cliente"
     cafe = 1500
     llavero = 1000
     gorra = 5000
@@ -310,25 +317,36 @@ def ModuloVentas():
 [2] = Llavero típico
 [3] = Gorra con mensaje nacional
 [4] = Chocolate de café nacional""")
-
-    #Operaciones.
-
-
+    
     #Se selecciona los productos deseados.
-    eleccion = input("\nSelecciona el producto que desees: ")
-    if eleccion == "1":
+    seleccionProd = input("\nSelecciona el producto que desees: ")
+    valores = ["1","2","3","4"]
+    while not seleccionProd in valores:
+         print("""
+                 VALOR INVALIDO!
+porfavor seleccione una de las siguientes opciones: """)
+         print("""
+[1] = Café nacional
+[2] = Llavero típico
+[3] = Gorra con mensaje nacional
+[4] = Chocolate de café nacional
+""")
+         print('Ingrese el que desea seleccionar:')
+         seleccionProd = (input())
+         eleccion = int(seleccionProd) 
+    if eleccion == 1:
         print("Has seleccionado Café nacional")
         cantidad = int(input("Cantidad de paquetes: "))
         total = print("\nEl total sería: ", cantidad * cafe, "colones")
-    elif eleccion == "2":
+    elif eleccion == 2:
         print("Has seleccionado Llavero típico")
         cantidad = int(input("Cantidad de llaveros: "))
         total2 = print("\nEl total sería: ", cantidad * llavero, "colones")
-    elif eleccion == "3":
+    elif eleccion == 3:
         print("Has seleccionado Gorras con mensaje nacional")
         cantidad = int(input("Cantidad de gorras: "))
         total3 = print("\nEl total sería: ", cantidad * gorra, "colones")
-    elif eleccion == "4":
+    elif eleccion == 4:
         print("Has seleccionado Chocolates de café nacional")
         cantidad = int(input("Cantidad de chocolates: "))
         total = print("\nEl total sería: ", cantidad * chocolate, "colones")
@@ -350,9 +368,9 @@ def ModuloVentas():
 [1] - Realizar otra venta.
 [2] - Volver al menu principal. \n''')
     print('Desea ir al:')
-    subModVentas = int(input())
-    valores = [1,2]
-    while not subModVentas in valores:
+    seleccion = (input())
+    valores = ["1","2"]
+    while not seleccion in valores:
         print("""
                  VALOR INVALIDO!
 porfavor seleccione una de las siguientes opciones: """)
@@ -361,7 +379,8 @@ porfavor seleccione una de las siguientes opciones: """)
 [2] - Volver al menu principal.
 """)
         print('Desea ir al:')
-        subModVentas = int(input())
+        seleccion = (input())
+    subModVentas = int(seleccion)
     return subModVentas
 
 def ModuloHistorial():
@@ -379,9 +398,9 @@ def ModuloHistorial():
 """)
     #variable submodulo Historial para seleccionar opciones en modulo historial
     print("Desea ir al: ")
-    subModHis = int(input())
-    valores = [1,2,3,4]
-    while not subModHis in valores:
+    seleccion = (input())
+    valores = ["1","2","3","4"]
+    while not seleccion in valores:
         print("""
                  VALOR INVALIDO!
 porfavor seleccione una de las siguientes opciones: """)
@@ -392,10 +411,11 @@ porfavor seleccione una de las siguientes opciones: """)
 [4] - Volver al Menu Principal.
 """)
         print('Desea ir al:')
-        subModHis = int(input())
+        seleccion = (input())
+        subModHis = int(seleccion)
     return subModHis
 
-def SubModulAforo():
+def SubModulAforo(): #----------MEN IN WORKING FOR YOU
     nino = 2
     adulto = 9
     adultoMa = 15
