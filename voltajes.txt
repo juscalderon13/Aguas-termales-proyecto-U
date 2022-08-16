@@ -1,0 +1,3 @@
+Lecturas altas: 3
+Lecturas Bajas: 3
+Lecturas erroneas: 4
